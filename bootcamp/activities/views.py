@@ -21,6 +21,7 @@ def notifications(request):
                   {'notifications': notifications})
 
 
+# test conflict
 @login_required
 @ajax_required
 def last_notifications(request):
