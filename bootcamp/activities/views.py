@@ -6,6 +6,8 @@ from bootcamp.activities.models import Notification
 from bootcamp.decorators import ajax_required
 
 
+
+
 @login_required
 def notifications(request):
     user = request.user
@@ -19,6 +21,7 @@ def notifications(request):
                   {'notifications': notifications})
 
 
+# test conflict
 
 
 @login_required
