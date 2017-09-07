@@ -8,7 +8,6 @@ from surfcar.authentication import views as bootcamp_auth_views
 from surfcar.core import views as core_views
 from surfcar.search import views as search_views
 
-
 urlpatterns = [
     url(r'^$', core_views.home, name='home'),
     url(r'^login', auth_views.login, {'template_name': 'core/cover.html'},
