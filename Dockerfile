@@ -3,14 +3,14 @@ ENV PYTHONUNBUFFERED 1
 
 ADD ./requirements.txt /requirements.txt
 ADD ./entrypoint.sh /entrypoint.sh
-ADD . /bootcamp
+ADD . /surfcar
 
 RUN pip install -r requirements.txt
 
 RUN groupadd -r django && useradd -r -g django django
 
-RUN chown -R django /bootcamp && chmod +x entrypoint.sh && chown django entrypoint.sh
+RUN chown -R django /surfcar && chmod +x entrypoint.sh && chown django entrypoint.sh
 
-WORKDIR /bootcamp
+WORKDIR /surfcar
 
 ENTRYPOINT ["/entrypoint.sh"]
