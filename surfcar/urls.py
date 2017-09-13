@@ -2,14 +2,18 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from django.contrib import admin
 
 from surfcar.activities import views as activities_views
 from surfcar.authentication import views as bootcamp_auth_views
 from surfcar.core import views as core_views
 from surfcar.search import views as search_views
 
+admin.autodiscover()
+
 urlpatterns = [
     url(r'^$', core_views.home, name='home'),
+    url(r'^admin/', admin.site.urls),
     url(r'^login', auth_views.login, {'template_name': 'core/cover.html'},
         name='login'),
     url(r'^logout', auth_views.logout, {'next_page': '/'}, name='logout'),
@@ -35,6 +39,8 @@ urlpatterns = [
     url(r'^search/$', search_views.search, name='search'),
     url(r'^(?P<username>[^/]+)/$', core_views.profile, name='profile'),
     url(r'^i18n/', include('django.conf.urls.i18n', namespace='i18n')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
 ]
 
 if settings.DEBUG:

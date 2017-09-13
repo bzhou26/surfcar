@@ -29,6 +29,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+    # 'django.contrib.sites',
 
     'surfcar.activities',
     'surfcar.articles',
