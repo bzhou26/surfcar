@@ -28,11 +28,19 @@ class ProfileForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=50,
         required=False)
+    phone_number = forms.RegexField(
+        regex=r'^\+?1?\d{9,15}$',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'minlength': 9, 'maxlength': 15, }),
+        label="Phone",
+        required=False,
+        error_messages={'invalid': "Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."}
+    )
 
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'job_title',
-                  'email', 'url', 'location', ]
+                  'email', 'url', 'location', 'phone_number',]
 
 
 class ChangePasswordForm(forms.ModelForm):

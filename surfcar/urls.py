@@ -14,6 +14,7 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^$', core_views.home, name='home'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^login', auth_views.login, {'template_name': 'core/cover.html'},
         name='login'),
     url(r'^logout', auth_views.logout, {'next_page': '/'}, name='logout'),
@@ -39,7 +40,6 @@ urlpatterns = [
     url(r'^search/$', search_views.search, name='search'),
     url(r'^(?P<username>[^/]+)/$', core_views.profile, name='profile'),
     url(r'^i18n/', include('django.conf.urls.i18n', namespace='i18n')),
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
 ]
 

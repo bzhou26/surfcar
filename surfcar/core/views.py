@@ -99,6 +99,7 @@ def settings(request):
             user.email = form.cleaned_data.get('email')
             user.profile.url = form.cleaned_data.get('url')
             user.profile.location = form.cleaned_data.get('location')
+            user.profile.phone_number = form.cleaned_data.get('phone_number')
             user.save()
             messages.add_message(request,
                                  messages.SUCCESS,
@@ -107,6 +108,7 @@ def settings(request):
     else:
         form = ProfileForm(instance=user, initial={
             'job_title': user.profile.job_title,
+            'phone_number': user.profile.phone_number,
             'url': user.profile.url,
             'location': user.profile.location
             })
