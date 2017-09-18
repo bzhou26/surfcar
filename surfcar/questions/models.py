@@ -7,7 +7,6 @@ from django.utils.encoding import python_2_unicode_compatible
 import markdown
 from surfcar.activities.models import Activity
 from taggit.managers import TaggableManager
-from decimal import Decimal
 
 
 
@@ -22,20 +21,7 @@ class Question(models.Model):
     favorites = models.IntegerField(default=0)
     has_accepted_answer = models.BooleanField(default=False)
     tags = TaggableManager()
-    CARPOOL_ISSUE = 'I'
-    CARPOOL_REQUEST = 'R'
-    OTHERS = 'O'
-    QUEST_TYPE = (
-        (CARPOOL_ISSUE, 'Carpool issue'),
-        (CARPOOL_REQUEST, 'Carpool request'),
-        (OTHERS, 'Others'),
-    )
-    quest_types = models.CharField(max_length=1, default='', choices=QUEST_TYPE)
-    destination = models.CharField(max_length=255, default='')
-    time_depart = models.TextField(max_length=2000, default='')
-    time_return = models.TextField(max_length=2000, null=True)
-    price = models.DecimalField(max_digits=5, decimal_places=2, default=Decimal('0.00'))
-    capacity = models.DecimalField(max_digits=5, decimal_places=2, default=Decimal('0.00'))
+
 
     class Meta:
         verbose_name = 'Question'
