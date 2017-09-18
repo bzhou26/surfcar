@@ -19,6 +19,7 @@ class Profile(models.Model):
     location = models.CharField(max_length=50, null=True, blank=True)
     url = models.CharField(max_length=50, null=True, blank=True)
     job_title = models.CharField(max_length=50, null=True, blank=True)
+    phone_number = models.CharField(max_length=16, default='', blank=True)
 
     class Meta:
         db_table = 'auth_profile'

@@ -59,7 +59,7 @@ media/
 
 .env
 
-venv_bootcamp/
+venv_surfcar/
 staticfiles
 
 .idea
