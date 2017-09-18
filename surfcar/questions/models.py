@@ -9,6 +9,7 @@ from surfcar.activities.models import Activity
 from taggit.managers import TaggableManager
 
 
+
 @python_2_unicode_compatible
 class Question(models.Model):
     user = models.ForeignKey(User)
@@ -20,6 +21,20 @@ class Question(models.Model):
     favorites = models.IntegerField(default=0)
     has_accepted_answer = models.BooleanField(default=False)
     tags = TaggableManager()
+    CARPOOL_ISSUE = 'I'
+    CARPOOL_REQUEST = 'R'
+    OTHERS = 'O'
+    QUEST_TYPE = (
+        (CARPOOL_ISSUE, 'Carpool issue'),
+        (CARPOOL_REQUEST, 'Carpool request'),
+        (OTHERS, 'Others'),
+    )
+    quest_types = models.CharField(max_length=1, choices=QUEST_TYPE)
+    destination = models.TextField(max_length=2000)
+    time_depart = models.TextField(max_length=2000)
+    time_return = models.TextField(max_length=2000, blank=True)
+    price = models.DecimalField(max_digits=None, decimal_places=None)
+    capacity = models.DecimalField(max_digits=None, decimal_places=None)
 
     class Meta:
         verbose_name = 'Question'
