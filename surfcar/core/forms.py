@@ -30,8 +30,8 @@ class ProfileForm(forms.ModelForm):
         required=False)
     phone_number = forms.RegexField(
         regex=r'^\+?1?\d{9,15}$',
-        widget=forms.NumberInput(
-            attrs={'class': 'form-control', 'minlength': 9, 'maxlength': 15, 'type': 'number', }),
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'minlength': 9, 'maxlength': 15, }),
         label="Phone",
         required=False,
         error_messages={'invalid': "Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."}
