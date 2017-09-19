@@ -15,6 +15,7 @@ class QuestionForm(forms.ModelForm):
         empty_label=("Choose Year", "Choose Month", "Choose Day"),
         )
     )
+    price = forms.DecimalField(widget=forms.TextInput(attrs={'size': 10, 'title': 'price', }))
 
     description = forms.CharField(
         widget=forms.Textarea(attrs={'class': 'form-control'}),
@@ -22,7 +23,7 @@ class QuestionForm(forms.ModelForm):
 
     class Meta:
         model = Question
-        fields = ['title', 'destination', 'time_depart', 'time_return', 'description', 'tags']
+        fields = ['title', 'destination', 'time_depart', 'time_return', 'price', 'description', 'tags']
 
 
 class AnswerForm(forms.ModelForm):

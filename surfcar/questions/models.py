@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
+from django.utils import timezone
 
 import markdown
 from surfcar.activities.models import Activity
@@ -31,9 +32,9 @@ class Question(models.Model):
     )
     quest_types = models.CharField(max_length=1, default='', choices=QUEST_TYPE)
     destination = models.CharField(max_length=255, default='')
-    time_depart = models.DateTimeField(auto_now=False, auto_now_add=False)
+    time_depart = models.DateTimeField(auto_now=False, auto_now_add=False, default=timezone.now)
     time_return = models.DateTimeField(auto_now=False, auto_now_add=False, null=True)
-    price = models.DecimalField(max_digits=5, decimal_places=2, default=Decimal('0.00'))
+    price = models.IntegerField(default=0)
     capacity = models.DecimalField(max_digits=5, decimal_places=2, default=Decimal('0.00'))
 
 
