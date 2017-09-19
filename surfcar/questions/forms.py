@@ -7,6 +7,14 @@ class QuestionForm(forms.ModelForm):
     title = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=255)
+    destination = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-control'}),
+        max_length=255)
+    time_depart = forms.DateTimeField(widget=forms.SelectDateWidget())
+    time_return = forms.DateTimeField(widget=forms.SelectDateWidget(
+        empty_label=("Choose Year", "Choose Month", "Choose Day"),
+        )
+    )
 
     description = forms.CharField(
         widget=forms.Textarea(attrs={'class': 'form-control'}),
@@ -14,7 +22,7 @@ class QuestionForm(forms.ModelForm):
 
     class Meta:
         model = Question
-        fields = ['title', 'description', 'tags']
+        fields = ['title', 'destination', 'time_depart', 'time_return', 'description', 'tags']
 
 
 class AnswerForm(forms.ModelForm):
