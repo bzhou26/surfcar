@@ -26,8 +26,29 @@ def _questions(request, questions, active):
     except EmptyPage:  # pragma: no cover
         questions = paginator.page(paginator.num_pages)
 
+    index = questions.number - 1
+    max_index = len(paginator.page_range)
+    if index >= 3:
+        start_index = index - 3
+    else:
+        start_index = 0
+    if index <= 3:
+        end_index = 7
+    elif index <= max_index - 3:
+        end_index = index + 4
+    else:
+        start_index = max_index - 7
+        end_index = max_index
+    page_range = paginator.page_range[start_index:end_index]
+
+    first_page = paginator.page(1)
+    end_page = paginator.num_pages
+
     return render(request, 'questions/questions.html', {
         'questions': questions,
+        'page_range': page_range,
+        'first_page': first_page,
+        'end_page': end_page,
         'active': active
     })
 
