@@ -1,15 +1,23 @@
 body {
-  background-color: #006389;
+  background-image:url("background.png");
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width:100%;
+  opacity: 0.9;
+  background-repeat: no-repeat;
 }
 
 .cover {
-  width: 400px;
-  height: 400px;
-  position: fixed;
-  margin-left: -200px;
-  margin-top: -200px;
-  top: 50%;
-  left: 50%;
+    width:400px;
+    height:400px;
+    overflow:scroll;
+    float:left;
+    margin-left:30%;
+    position: absolute;
+    margin-top: -100px;
+
 }
 
 .logo {
@@ -27,7 +35,7 @@ body {
   background-color: #f6f6f6;
   width: 100%;
   height: 330px;
-  border-radius: 7px;
+  border-radius: 20px;
 }
 
 .login {
@@ -36,4 +44,271 @@ body {
 
 .login form {
   margin-top: 20px;
+}
+
+
+
+.nav {
+    list-style-type: none;
+    padding: 20px 150px;
+    margin: 0 auto;
+    overflow: scroll;
+    height:300px;
+    width: 960px;
+    font-family: sans-serif;
+    font-weight: bold;
+
+}
+
+
+
+li {
+    float: left;
+    margin-left:10px;
+}
+
+
+li a, dropbtn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size:20px;
+}
+
+li a:visited{
+    color:white;
+}
+
+
+
+
+
+li a:hover, .long:hover .dropbtn {
+    color:rgb(0,191,136);
+    background-color: transparent;
+
+}
+
+
+
+
+.long li {
+    display: inline-block;
+}
+
+.long-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.long-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+
+.long-content a:hover {background-color: transparent}
+
+.long:hover .long-content {
+    display: block;
+}
+
+
+
+
+
+
+li a:hover, .same:hover .dropbtn {
+    color:rgb(0,191,136);
+    background-color: transparent;
+
+}
+
+.same li {
+    display: inline-block;
+}
+
+.same-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.same-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+
+.same-content a:hover {background-color: transparent}
+
+.same:hover .same-content {
+    display: block;
+}
+
+
+
+
+
+
+li a:hover, .air:hover .dropbtn {
+    color:rgb(0,191,136);
+    background-color: transparent;
+
+}
+
+.air li {
+    display: inline-block;
+}
+
+.air-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.air-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+
+.air-content a:hover {background-color: transparent}
+
+.air:hover .air-content {
+    display: block;
+}
+
+
+
+
+
+
+
+li a:hover, .stuff:hover .dropbtn {
+    color:rgb(0,191,136);
+    background-color: transparent;
+
+}
+
+.stuff li {
+    display: inline-block;
+}
+
+.stuff-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.stuff-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+
+.stuff-content a:hover {background-color: transparent}
+
+.stuff:hover .stuff-content {
+    display: block;
+}
+
+
+
+
+
+li a:hover, .move:hover .dropbtn {
+    color:rgb(0,191,136);
+    background-color: transparent;
+
+}
+
+.move li {
+    display: inline-block;
+}
+
+.move-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.move-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+
+.move-content a:hover {background-color: transparent}
+
+.move:hover .move-content {
+    display: block;
+}
+
+
+
+
+li a:hover, .about:hover .dropbtn {
+    color:rgb(0,191,136);
+    background-color: transparent;
+
+}
+
+.about li {
+    display: inline-block;
+}
+
+.about-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.about-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+
+.about-content a:hover {background-color: transparent}
+
+.about:hover .about-content {
+    display: block;
 }
