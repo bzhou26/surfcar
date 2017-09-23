@@ -1,5 +1,11 @@
 body {
-  background-color: #006389;
+  background-image: url("background.png");
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width:100%;
+  opacity: 0.9;
 }
 
 .cover {
@@ -8,16 +14,32 @@ body {
   position: fixed;
   margin-left: -200px;
   margin-top: -200px;
-  top: 50%;
-  left: 50%;
+  top: 100px;
+  left: 300%;
 }
+
+.searchbar{
+  margin:0px auto;
+  width:300px;
+}
+
+.searchbox{
+    margin:0px auto;
+}
+
+.search{
+    padding: 10px;
+    box-sizing: 2px;
+    border-radius: 20px;
+}
+
 
 .logo {
   margin: 0;
   font-size: 3em;
   font-weight: 200;
   font-family: "Audiowide", cursive;
-  color: #92c35e;
+  color: black;
   text-align: center;
   text-shadow: 1px 1px 0 #333333;
   line-height: 70px;
